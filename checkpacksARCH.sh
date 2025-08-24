@@ -10,7 +10,7 @@ REPORT="packages_report"
 
 PACKAGES=(
     base-devel bash binutils bison bzip2 coreutils diffutils file
-    findutils gawk gcc gettext git grep gzip m4 make ncurses
+    findutils gawk gcc glibc gettext git grep gzip m4 make ncurses
     patch perl python sed tar texinfo util-linux xz openssl
     which gperf help2man flex libisoburn dosfstools mtools curl
     wget ca-certificates unzip zip p7zip cpio bc ed lzip
