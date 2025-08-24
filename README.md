@@ -6,3 +6,4 @@ Log file is "packages_report". You can delete it if it's have too much text, or 
 
 ## Attention!
 Now this script aviable only in arch linux, but i will add more distributions soon
+If i forgot about some packages, please, write about this in issues
