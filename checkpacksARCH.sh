@@ -8,6 +8,8 @@ echo -e "${GREEN}Script made by dimonchikous ${NC}"
 
 REPORT="packages_report"
 
+echo "" > $REPORT
+
 PACKAGES=(
     base-devel bash binutils bison bzip2 coreutils diffutils file
     findutils gawk gcc glibc gettext git grep gzip m4 make ncurses
