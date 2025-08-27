@@ -13,21 +13,21 @@ REPORT="packages_report"
 echo "" > $REPORT
 
 PACKAGES=(
-    base-devel bash binutils bison bzip2 coreutils diffutils file
-    findutils gawk gcc glibc gettext git grep gzip m4 make ncurses
-    patch perl python sed tar texinfo util-linux xz openssl
-    which gperf help2man flex libisoburn dosfstools mtools curl
-    wget ca-certificates unzip zip p7zip cpio bc ed lzip
+    build-essential bash binutils bison bzip2 coreutils diffutils file
+    findutils gawk gcc libc6-dev gettext git grep gzip m4 make libncurses-dev
+    patch perl python sed tar texinfo util-linux xz-utils libssl-dev
+    which gperf help2man flex xorriso dosfstools mtools curl
+    wget ca-certificates unzip zip p7zip cpio bc ed lzip python3
 )
 
 MISSING_PACKAGES=()
 
 for package in "${PACKAGES[@]}"; do
     if dpkg -l | grep "$package"; then
-	    version=$(dpkg -l | grep "$package" | awk '{print $2}')
+	    version=$(dpkg -l | grep "$package"|awk 'print $3')
 	    echo "$package $version: DOWNLOADED" >> "$REPORT"
     else
-	    version=$(dpkg -l | grep "$package" | awk '{print $2}')
+	    version=$(dpkg -l | grep "$package"|awk 'print $3')
 	    echo "$package $version: MISSING" >> "$REPORT"
 	    MISSING_PACKAGES+=("$package")
 	   
